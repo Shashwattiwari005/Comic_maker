@@ -20,6 +20,18 @@ export default function ScriptGenerator() {
         placeholder="Plot of the story"
         onChange={handleTitleChange}
       />
+      <Input
+        value={title}
+        required
+        placeholder="Plot of the story"
+        onChange={handleTitleChange}
+      />
+      <Input
+        value={title}
+        required
+        placeholder="Plot of the story"
+        onChange={handleTitleChange}
+      />
       <Button onClick={GetScript}>Submit</Button>
     </div>
   );
