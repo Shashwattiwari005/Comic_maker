@@ -1,19 +1,20 @@
 import Groq from "groq-sdk";
-import { useAppContext } from "../context/context";
+import { AppContext } from "../context/context";
+import { useContext } from "react";
 
 const groq = new Groq({
   apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY,
   dangerouslyAllowBrowser: true,
 });
 
-export async function Query() {
-  const { title } = useAppContext();
+export function Query() {
+  const { title } = useContext(AppContext);
 
   return groq.chat.completions.create({
     messages: [
       {
         role: "user",
-        content: `${title}`,
+        content: `give me a story with title : ${title}`,
       },
     ],
     model: "llama3-8b-8192",

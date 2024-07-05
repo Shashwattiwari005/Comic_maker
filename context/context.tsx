@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const AppContext = createContext({
+export const AppContext = createContext({
   title: "",
   setTitle: (title: string) => {},
   negative: "",
@@ -23,8 +23,4 @@ const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const useAppContext = () => {
-  return useContext(AppContext);
-};
-
-export { useAppContext, AppContextProvider };
+export { AppContextProvider };
